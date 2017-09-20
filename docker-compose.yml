@@ -1,0 +1,30 @@
+version: '2'
+networks:
+  default:
+    external:
+      name: artifacts_default
+
+services:
+  # web:
+  #   build: .
+  #   command: npm run dev
+  #   volumes:
+  #     - ./:/usr/src/app
+  #   ports:
+  #     - "8080:8080"
+  #   links:
+  #     - mongo
+  #   environment:
+  #     - MONGO_DB_URI=mongodb://mongo:27017/nodeapi
+
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes_from:
+      - mongodata
+
+  mongodata:
+    image: tianon/true
+    volumes:
+      - /data/db
