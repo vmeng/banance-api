@@ -45,7 +45,7 @@ class UserController extends Controller {
 	 //  		// res.status(201).json(Object.assign(doc))
 	 //  	}).catch(err => next(err));
 
-	}
+	// }
 }
 
 module.exports = new UserController(userFacade);
