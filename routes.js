@@ -3,6 +3,7 @@ const router = new Router();
 
 const user = require('./model/user/router');
 const pet = require('./model/pet/router');
+const chaincode = require('./model/chaincode/router');
 
 // const requestify = require('requestify');
 
@@ -12,6 +13,8 @@ router.route('/').get((req, res) => {
 
 router.use('/user', user);
 router.use('/pet', pet);
+router.use('/chaincode', chaincode);
+
 const requestify = require('requestify');
 router.use('/test', function(req,res,next){
 	// res.send('ok');
